@@ -142,10 +142,15 @@ class Ui_MainWindow(object):
         if current_insertlabel_text == "Insert any language here:" and current_røversprog_text == "Røversprog:":
             self.insertlabel.setText("Indsæt dit røversprog")
             self.roversprog.setText("Almindeligt sprog")
+            self.inputfelt.setPlainText("")
+            self.outputfelt.setPlainText("")
+            
             
         elif current_insertlabel_text == "Indsæt dit røversprog" and current_røversprog_text == "Almindeligt sprog":
             self.insertlabel.setText("Insert any language here:")
             self.roversprog.setText("Røversprog:")
+            self.inputfelt.setPlainText("")
+            self.outputfelt.setPlainText("")
 
     
     # change
