@@ -18,16 +18,16 @@ loader = QUiLoader()
 
 
 # Læg mærke til at klassen nedarver fra QObject i stedet for QMainWindow
-class Roeversprogsoversaetter(QObject):
+class oversaetterlayout(QObject):
     def __init__(self):
         super().__init__()
         # Her loades brugerfladen fra Designer.
-        self.ui = loader.load("roeversprogsoversaetter.ui", None)
-        # self.ui refererer til selve brugerfladen som for nu er af typen
-        # QMainWindow, og som indeholder et gridLayout og en pushbutton
+        self.ui = loader.load("oversaetterlayout.ui", None)
+        # self.ui refererer til selve brugerfladen som for nu er af typen QMainWindow
         self.ui.setWindowTitle("Direkte indlæsning fra ui")
-        # Her sættes signal og slot op for oversaetknap og metoden oversaet
-        self.ui.oversaet_knap.clicked.connect(self.oversaet)
+        # Her sættes signal og slot op for translate_button og metoden oversaet
+        self.ui.translatebutton.clicked.connect(self.oversaet)
+
         # self.ui.show()
 
     def oversaet(self):
@@ -44,7 +44,7 @@ class Roeversprogsoversaetter(QObject):
 program = QApplication.instance()
 if program == None:
     program = QApplication(sys.argv)
-roeversprogsoversaetter = Roeversprogsoversaetter()
-roeversprogsoversaetter.ui.show()
+oversaetterlayout = oversaetterlayout()
+oversaetterlayout.ui.show()
 program.exec()
 # Direkte indlæsning af designfil:1 ends here
